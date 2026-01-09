@@ -1,22 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UPLOAD DOKUMEN</title>
-
-  <!-- CSS eksternal -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPLOAD DOKUMEN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-file-upload"></i> UPLOAD DOKUMEN</h1>
+            <p class="subtitle">Unggah dan kelola dokumen Anda dengan mudah</p>
+        </div>
+    </header>
 
-  <iframe
-    id="uploadFrame"
-    src="https://script.google.com/macros/s/AKfycbznlM4VfRh2ubxGfeYVquOORBtJhpMcPTbI4F26lb0-Hcrb_jtL8B3rKv0o_95j0m4/exec"
-    scrolling="no">
-  </iframe>
+    <main class="container">
+        <div class="upload-info">
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <p>Form upload dokumen ini terhubung dengan Google Sheets untuk penyimpanan data.</p>
+            </div>
+            
+            <div class="device-status">
+                <p id="device-info">Mendeteksi perangkat...</p>
+                <div class="screen-size">
+                    <span>Lebar: <span id="screen-width">-</span>px</span>
+                    <span>Tinggi: <span id="screen-height">-</span>px</span>
+                </div>
+            </div>
+        </div>
 
-  <!-- JS eksternal -->
-  <script src="script.js"></script>
+        <div class="iframe-container">
+            <div class="iframe-header">
+                <h2><i class="fas fa-file-alt"></i> Form Upload Dokumen</h2>
+                <button id="toggle-view" class="btn-view">
+                    <i class="fas fa-expand-alt"></i> Mode Penuh
+                </button>
+            </div>
+            
+            <div class="iframe-wrapper">
+                <iframe 
+                    id="upload-iframe"
+                    src="https://script.google.com/macros/s/AKfycbznlM4VfRh2ubxGfeYVquOORBtJhpMcPTbI4F26lb0-Hcrb_jtL8B3rKv0o_95j0m4/exec"
+                    title="Form Upload Dokumen"
+                    scrolling="no">
+                </iframe>
+                
+                <div class="iframe-overlay" id="loading-overlay">
+                    <div class="spinner"></div>
+                    <p>Memuat form upload...</p>
+                </div>
+            </div>
+            
+            <div class="iframe-footer">
+                <p><i class="fas fa-shield-alt"></i> Data Anda aman dan terlindungi</p>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3><i class="fas fa-question-circle"></i> Petunjuk Penggunaan</h3>
+            <div class="instruction-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p>Isi semua field dalam form di atas</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p>Unggah dokumen dengan format yang diizinkan</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p>Klik tombol "Submit" untuk mengirim data</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Upload Dokumen. Dibuat dengan <i class="fas fa-heart"></i> untuk kemudahan upload file.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
